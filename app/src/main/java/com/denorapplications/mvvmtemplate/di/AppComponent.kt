@@ -6,7 +6,11 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [AppModule::class, DatabaseModule::class]
+    modules = [
+        AppModule::class,
+        DatabaseModule::class,
+        SharedPreferencesModule::class
+    ]
 )
 interface AppComponent {
 
