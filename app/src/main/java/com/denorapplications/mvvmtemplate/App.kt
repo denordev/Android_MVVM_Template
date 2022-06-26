@@ -2,8 +2,8 @@ package com.denorapplications.mvvmtemplate
 
 import android.app.Application
 import android.content.Context
+import androidx.fragment.app.Fragment
 import com.denorapplications.mvvmtemplate.di.AppComponent
-import com.denorapplications.mvvmtemplate.di.DaggerAppComponent
 
 class App : Application() {
 
@@ -21,3 +21,6 @@ val Context.appComponent: AppComponent
         is App -> appComponent
         else -> this.applicationContext.appComponent
     }
+
+fun Fragment.getAppComponent(): AppComponent =
+    (requireContext() as App).appComponent

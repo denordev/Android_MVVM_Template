@@ -2,6 +2,7 @@ package com.denorapplications.mvvmtemplate.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.denorapplications.mvvmtemplate.appComponent
 import com.denorapplications.mvvmtemplate.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,5 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        appComponent.inject(this)
     }
 }
