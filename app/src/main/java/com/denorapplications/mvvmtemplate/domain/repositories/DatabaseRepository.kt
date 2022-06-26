@@ -1,18 +1,18 @@
 package com.denorapplications.mvvmtemplate.domain.repositories
 
-import com.denorapplications.mvvmtemplate.domain.models.Cat
+import com.denorapplications.mvvmtemplate.domain.models.Item
 
 interface DatabaseRepository {
 
-    suspend fun insertItem(item: Cat)
+    suspend fun insertItem(item: Item)
 
-    suspend fun getItemsList(): List<Cat>
+    suspend fun getItemsList(): List<Item>
 
-    suspend fun getItemById(id: Long): Cat
+    suspend fun getItemById(id: Long): Item
 
-    suspend fun deleteItem(item: Cat)
+    suspend fun deleteItem(item: Item)
 
-    suspend fun updateItem(item: Cat)
+    suspend fun updateItem(item: Item)
 
     suspend fun deleteAllItems()
 }

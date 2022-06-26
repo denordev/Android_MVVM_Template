@@ -10,4 +10,5 @@ object Constants {
 
     //Shared Preferences
     const val SP_OPTIONS = "options"
+
 }

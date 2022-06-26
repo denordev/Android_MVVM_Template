@@ -9,5 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="com.denorapplications.mvvmtemplate.presentation.mainfragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_catsListFragment"
+            app:destination="@id/catsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/catsListFragment"
+        android:name="com.denorapplications.mvvmtemplate.presentation.catslistfragment.CatsListFragment"
+        android:label="fragment_cats_list"
+        tools:layout="@layout/fragment_cats_list" />
 </navigation>

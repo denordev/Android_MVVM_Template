@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.catslistfragment.CatsListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -10,5 +11,20 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="8dp"
         android:id="@+id/cats_recycler_view"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/progress_bar"/>
+
+    <TextView
+        android:id="@+id/error_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/check_internet_connection"
+        android:visibility="invisible"/>
+
 
 </FrameLayout>

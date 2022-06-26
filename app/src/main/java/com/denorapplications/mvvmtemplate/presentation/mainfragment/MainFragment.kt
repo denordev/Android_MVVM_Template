@@ -42,6 +42,17 @@ class MainFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initViews()
+        initObservers()
+    }
+
+    private fun initViews() = with(binding) {
+        showCatsButton.setOnClickListener {
+            navigate(MainFragmentDirections.actionMainFragmentToCatsListFragment())
+        }
+    }
+
+    private fun initObservers() {
         viewModel.alive()
     }
 
