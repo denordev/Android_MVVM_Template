@@ -1,7 +1,7 @@
 package com.denorapplications.mvvmtemplate.domain.models
 
-data class ItemsListState(
+data class CatsListState(
     val isLoading: Boolean,
-    val itemsList: List<Item>?,
+    val itemsList: List<Cat>?,
     val error: String?
 )

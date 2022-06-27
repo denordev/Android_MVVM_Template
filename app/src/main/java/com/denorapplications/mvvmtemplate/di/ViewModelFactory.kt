@@ -1,20 +1,23 @@
 package com.denorapplications.mvvmtemplate.di
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-typealias ViewModelCreator = () -> ViewModel?
+import com.denorapplications.mvvmtemplate.presentation.catslistfragment.CatListViewModel
+import com.denorapplications.mvvmtemplate.presentation.mainfragment.MainViewModel
+import javax.inject.Inject
+import javax.inject.Provider
 
-
-class ViewModelFactory(
-    private val viewModelCreator: ViewModelCreator = { null }
+class ViewModelFactory @Inject constructor(
+    mainViewModel: Provider<MainViewModel>,
+    catListViewModel: Provider<CatListViewModel>
 ) : ViewModelProvider.Factory {
 
+    private val providers = mapOf<Class<*>, Provider<out ViewModel>>(
+        MainViewModel::class.java to mainViewModel,
+        CatListViewModel::class.java to catListViewModel
+    )
+
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return viewModelCreator() as T
+        return providers[modelClass]!!.get() as T
     }
 }
-
-inline fun <reified VM : ViewModel> Fragment.viewModelCreator(noinline creator: ViewModelCreator): Lazy<VM> =
-    viewModels { ViewModelFactory(creator) }

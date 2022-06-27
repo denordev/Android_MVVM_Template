@@ -1,35 +1,35 @@
 package com.denorapplications.mvvmtemplate.data.local.repository
 
-import com.denorapplications.mvvmtemplate.data.local.ItemDao
-import com.denorapplications.mvvmtemplate.domain.models.Item
+import com.denorapplications.mvvmtemplate.data.local.CatDao
+import com.denorapplications.mvvmtemplate.domain.models.Cat
 import com.denorapplications.mvvmtemplate.domain.repositories.DatabaseRepository
 import javax.inject.Inject
 
 class DatabaseRepositoryImpl @Inject constructor(
-    private val itemDao: ItemDao
+    private val catDao: CatDao
 ) : DatabaseRepository {
 
-    override suspend fun insertItem(item: Item) {
-        itemDao.insertItem(item)
+    override suspend fun insertItem(item: Cat) {
+        catDao.insertItem(item)
     }
 
-    override suspend fun getItemsList(): List<Item> {
-        return itemDao.getItemsList()
+    override suspend fun getItemsList(): List<Cat> {
+        return catDao.getItemsList()
     }
 
-    override suspend fun getItemById(id: Long): Item {
-        return itemDao.getItemById(id)
+    override suspend fun getItemById(id: Long): Cat {
+        return catDao.getItemById(id)
     }
 
-    override suspend fun deleteItem(item: Item) {
-        itemDao.deleteItem(item)
+    override suspend fun deleteItem(item: Cat) {
+        catDao.deleteItem(item)
     }
 
-    override suspend fun updateItem(item: Item) {
-        itemDao.updateItem(item)
+    override suspend fun updateItem(item: Cat) {
+        catDao.updateItem(item)
     }
 
     override suspend fun deleteAllItems() {
-        itemDao.deleteAllItems()
+        catDao.deleteAllItems()
     }
 }

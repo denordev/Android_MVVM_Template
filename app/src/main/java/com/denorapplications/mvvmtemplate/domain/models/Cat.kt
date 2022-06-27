@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 
 @Entity
 @Parcelize
-data class Item(
+data class Cat(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo(name = Constants.ITEM_NAME_COLUMN) val name: String,
     @ColumnInfo(name = Constants.ITEM_INFO_COLUMN) val info: String

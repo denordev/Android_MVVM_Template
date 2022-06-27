@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
-class GetItemByIdUseCase (
+class GetItemByIdUseCase @Inject constructor (
     private val databaseRepository: DatabaseRepository
 ) {
 

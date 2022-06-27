@@ -3,8 +3,9 @@ package com.denorapplications.mvvmtemplate.di
 import android.content.Context
 import androidx.room.Room
 import com.denorapplications.mvvmtemplate.data.local.AppDatabase
-import com.denorapplications.mvvmtemplate.data.local.ItemDao
+import com.denorapplications.mvvmtemplate.data.local.CatDao
 import com.denorapplications.mvvmtemplate.data.local.repository.DatabaseRepositoryImpl
+import com.denorapplications.mvvmtemplate.domain.repositories.DatabaseRepository
 import com.denorapplications.mvvmtemplate.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -27,12 +28,14 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideItemDao(appDatabase: AppDatabase) : ItemDao {
+    fun provideItemDao(appDatabase: AppDatabase) : CatDao {
         return appDatabase.itemDao()
     }
 
     @Singleton
     @Provides
-    fun provideDatabaseRepositoryImpl(itemDao: ItemDao) = DatabaseRepositoryImpl(itemDao)
+    fun provideDatabaseRepository(itemDao: CatDao): DatabaseRepository {
+        return DatabaseRepositoryImpl(itemDao)
+    }
 
 }

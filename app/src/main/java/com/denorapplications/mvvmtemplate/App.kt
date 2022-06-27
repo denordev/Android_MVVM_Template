@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.fragment.app.Fragment
 import com.denorapplications.mvvmtemplate.di.AppComponent
+import com.denorapplications.mvvmtemplate.di.DaggerAppComponent
 
 class App : Application() {
 
@@ -11,7 +12,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.create()
+        appComponent = DaggerAppComponent.factory().create(applicationContext)
     }
 }
 
@@ -22,5 +23,6 @@ val Context.appComponent: AppComponent
         else -> this.applicationContext.appComponent
     }
 
+/** Extension to get AppComponent in Fragment*/
 fun Fragment.getAppComponent(): AppComponent =
-    (requireContext() as App).appComponent
+    requireContext().appComponent
