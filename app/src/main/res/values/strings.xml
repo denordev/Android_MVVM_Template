@@ -3,4 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Welcome to Android MVVM Template App</string>
     <string name="check_internet_connection">Check internet connection</string>
+    <string name="main_fragment_label">Main Fragment</string>
+    <string name="cats_fragment_label">Cats List</string>
 </resources>

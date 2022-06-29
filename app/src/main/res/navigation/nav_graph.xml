@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.denorapplications.mvvmtemplate.presentation.mainfragment.MainFragment"
-        android:label="fragment_main"
+        android:label="@string/main_fragment_label"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_catsListFragment"
@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/catsListFragment"
         android:name="com.denorapplications.mvvmtemplate.presentation.catslistfragment.CatsListFragment"
-        android:label="fragment_cats_list"
+        android:label="@string/cats_fragment_label"
         tools:layout="@layout/fragment_cats_list" />
 </navigation>
