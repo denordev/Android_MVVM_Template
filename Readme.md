@@ -1,3 +1,5 @@
+Clean Architecture with MVVM are used in this template.
+
 Libraries Used in template:
 
 1. Navigation Component with NavArgs
