@@ -19,8 +19,8 @@ Libraries Used in template:
 15. <a href="https://ktlint.github.io/">Ktlint </a>
 16. <a href="https://detekt.dev/">Detekt </a>
 
-For loading cats photos: thecatapi.com
-You can obtain your own API_KEY
+For loading cats photos: <a href="https:://thecatapi.com">CATS API</a>
+<br>You can obtain your own API_KEY
 
 To set up ApiKey you can do next steps.
 
