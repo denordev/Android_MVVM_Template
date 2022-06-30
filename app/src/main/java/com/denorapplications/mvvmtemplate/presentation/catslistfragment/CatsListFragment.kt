@@ -1,6 +1,5 @@
 package com.denorapplications.mvvmtemplate.presentation.catslistfragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,22 +11,16 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.denorapplications.mvvmtemplate.databinding.FragmentCatsListBinding
-import com.denorapplications.mvvmtemplate.getAppComponent
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CatsListFragment : Fragment() {
 
     private var _binding: FragmentCatsListBinding? = null
     private val binding get() = _binding!!
     private val catsAdapter: CatsAdapter by lazy { CatsAdapter() }
 
-    private val viewModel: CatListViewModel by viewModels {
-        getAppComponent().viewModelsFactory()
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        getAppComponent().inject(this)
-    }
+    private val viewModel: CatListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

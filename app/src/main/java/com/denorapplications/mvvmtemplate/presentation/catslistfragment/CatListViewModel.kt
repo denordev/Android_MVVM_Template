@@ -5,9 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.denorapplications.mvvmtemplate.domain.models.CatsListState
 import com.denorapplications.mvvmtemplate.domain.usecases.GetCatsListUseCase
 import com.denorapplications.mvvmtemplate.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.* // ktlint-disable no-wildcard-imports
 import javax.inject.Inject
 
+@HiltViewModel
 class CatListViewModel @Inject constructor(
     private val getCatsListUseCase: GetCatsListUseCase
 ) : ViewModel() {

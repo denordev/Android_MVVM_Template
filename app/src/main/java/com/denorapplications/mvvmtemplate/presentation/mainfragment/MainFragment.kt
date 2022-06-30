@@ -1,27 +1,20 @@
 package com.denorapplications.mvvmtemplate.presentation.mainfragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.denorapplications.mvvmtemplate.databinding.FragmentMainBinding
-import com.denorapplications.mvvmtemplate.getAppComponent
 import com.denorapplications.mvvmtemplate.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : BaseFragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: MainViewModel by viewModels {
-        getAppComponent().viewModelsFactory()
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        getAppComponent().inject(this)
-    }
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

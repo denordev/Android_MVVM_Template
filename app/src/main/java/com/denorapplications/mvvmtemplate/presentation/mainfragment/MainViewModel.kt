@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.denorapplications.mvvmtemplate.domain.models.ItemState
 import com.denorapplications.mvvmtemplate.domain.usecases.GetItemByIdUseCase
 import com.denorapplications.mvvmtemplate.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.* // ktlint-disable no-wildcard-imports
 import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel @Inject constructor(
     private val getItemByIdUseCase: GetItemByIdUseCase
 ) : ViewModel() {
