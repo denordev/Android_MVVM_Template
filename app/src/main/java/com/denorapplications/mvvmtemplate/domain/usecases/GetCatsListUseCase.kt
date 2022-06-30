@@ -5,7 +5,10 @@ import com.denorapplications.mvvmtemplate.util.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import retrofit2.HttpException
 import javax.inject.Inject
+private const val CATS_COUNT = 50
+private const val PAGE_NUMBER = 1
 
 class GetCatsListUseCase @Inject constructor(
     private val catsRepository: CatsRepository
@@ -14,9 +17,9 @@ class GetCatsListUseCase @Inject constructor(
     operator fun invoke() = flow {
         try {
             emit(Resource.Loading())
-            val list = catsRepository.getCatsList(50, 1)
+            val list = catsRepository.getCatsList(CATS_COUNT, PAGE_NUMBER)
             emit(Resource.Success(list))
-        }catch (e: Exception) {
+        }catch (e: HttpException) {
             emit(Resource.Error(e.toString()))
         }
     }.flowOn(Dispatchers.IO)

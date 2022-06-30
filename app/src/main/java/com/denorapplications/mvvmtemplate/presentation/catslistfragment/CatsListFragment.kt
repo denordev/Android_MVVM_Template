@@ -29,7 +29,6 @@ class CatsListFragment : Fragment() {
         getAppComponent().inject(this)
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +38,6 @@ class CatsListFragment : Fragment() {
             container,
             false
         )
-
         return binding.root
     }
 

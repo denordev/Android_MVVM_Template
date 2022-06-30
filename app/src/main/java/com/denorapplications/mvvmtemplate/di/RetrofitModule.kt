@@ -30,7 +30,7 @@ object RetrofitModule {
     @Provides
     @Singleton
     fun provideHttpCache(context: Context): Cache {
-        val cacheSize: Long = 10 * 1024 * 1024
+        val cacheSize: Long = CACHE_SIZE
         return Cache(context.cacheDir, cacheSize)
     }
 
@@ -75,4 +75,6 @@ object RetrofitModule {
     fun provideCatsRepository(catsApi: CatsApi): CatsRepository {
         return CatsRepositoryImpl(catsApi)
     }
+
+    private const val CACHE_SIZE: Long = 10 * 1024 * 1024
 }

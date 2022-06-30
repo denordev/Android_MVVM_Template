@@ -3,11 +3,14 @@ package com.denorapplications.mvvmtemplate.presentation.mainfragment
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.denorapplications.mvvmtemplate.domain.models.CatState
 import com.denorapplications.mvvmtemplate.domain.models.ItemState
 import com.denorapplications.mvvmtemplate.domain.usecases.GetItemByIdUseCase
 import com.denorapplications.mvvmtemplate.util.Resource
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.launchIn
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(

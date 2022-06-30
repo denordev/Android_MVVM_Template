@@ -5,6 +5,7 @@ import com.denorapplications.mvvmtemplate.util.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import retrofit2.HttpException
 import javax.inject.Inject
 
 class GetItemByIdUseCase @Inject constructor (
@@ -16,7 +17,7 @@ class GetItemByIdUseCase @Inject constructor (
             emit(Resource.Loading())
             val item = databaseRepository.getItemById(id)
             emit(Resource.Success(item))
-        } catch (e: Exception) {
+        } catch (e: HttpException) {
             emit(Resource.Error(message = e.localizedMessage ?: "Unexpected error"))
         }
     }.flowOn(Dispatchers.IO)

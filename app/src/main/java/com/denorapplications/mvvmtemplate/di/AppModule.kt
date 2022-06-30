@@ -9,6 +9,4 @@ import dagger.Module
         SharedPreferencesModule::class,
     ]
 )
-object AppModule {
-
-}
+object AppModule

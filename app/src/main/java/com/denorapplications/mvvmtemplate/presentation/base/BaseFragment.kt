@@ -16,17 +16,16 @@ open class BaseFragment : Fragment() {
     }
 
     fun navigate(action: Int, bundle: Bundle? = null) {
-        findNavController().navigate(action, bundle)
+        navController.navigate(action, bundle)
     }
 
     fun navigate(direction: NavDirections, args: Bundle? = null) {
-        findNavController().navigate(direction.actionId, args)
+        navController.navigate(direction.actionId, args)
     }
 
     fun navigateUp() {
-        findNavController().navigateUp()
+        navController.navigateUp()
     }
 
     fun getMainActivity() = activity as MainActivity?
-
 }

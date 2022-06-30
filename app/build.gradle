@@ -4,6 +4,7 @@ plugins {
     id 'androidx.navigation.safeargs'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'io.gitlab.arturbosch.detekt' version '1.21.0-RC2'
 }
 
 android {
@@ -35,6 +36,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+}
+
+detekt {
+    toolVersion = "1.21.0-RC2"
+    source = files("src/main/java")
+    parallel = true
+    config = files("detekt-config.yml")
+    buildUponDefaultConfig = true
+    allRules = false
+    basePath = projectDir
 }
 
 dependencies {
@@ -93,6 +104,11 @@ dependencies {
 
     //Paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.1"
+
+    // Mockito framework
+    testImplementation "org.mockito:mockito-core:4.6.0"
+    // mockito-kotlin
+    testImplementation "org.mockito.kotlin:mockito-kotlin:1.6.0"
 
 
 }

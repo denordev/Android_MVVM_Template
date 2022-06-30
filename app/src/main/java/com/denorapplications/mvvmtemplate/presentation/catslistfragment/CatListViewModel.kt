@@ -5,7 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.denorapplications.mvvmtemplate.domain.models.CatsListState
 import com.denorapplications.mvvmtemplate.domain.usecases.GetCatsListUseCase
 import com.denorapplications.mvvmtemplate.util.Resource
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.launchIn
 import javax.inject.Inject
 
 class CatListViewModel @Inject constructor(
