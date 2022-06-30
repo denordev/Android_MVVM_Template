@@ -26,7 +26,7 @@ To set up ApiKey you can do next steps.
 
 1. Create in projects root folder file "apikey.properties";
 2. Add variables:
-   BASE_URL = "https://api.thecatapi.com/v1/images/";
-   CATS_API_KEY = "your_api_key";
+   <br>BASE_URL = "https://api.thecatapi.com/v1/images/";
+   <br>CATS_API_KEY = "your_api_key";
 3. Build the project;
 4. In code you can find this properties using: BuildConfig.BASE_URL or BuildConfig.CATS_API_KEY.
