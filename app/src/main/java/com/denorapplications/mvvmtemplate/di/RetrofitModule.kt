@@ -15,7 +15,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-
 @Module
 object RetrofitModule {
 
@@ -47,7 +46,6 @@ object RetrofitModule {
     fun provideMoshiConverterFactory(): Moshi {
         return Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     }
-
 
     @Provides
     @Singleton

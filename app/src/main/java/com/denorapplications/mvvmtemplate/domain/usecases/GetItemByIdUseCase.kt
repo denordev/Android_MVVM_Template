@@ -8,11 +8,11 @@ import kotlinx.coroutines.flow.flowOn
 import retrofit2.HttpException
 import javax.inject.Inject
 
-class GetItemByIdUseCase @Inject constructor (
+class GetItemByIdUseCase @Inject constructor(
     private val databaseRepository: DatabaseRepository
 ) {
 
-    operator fun invoke(id: Long) = flow{
+    operator fun invoke(id: Long) = flow {
         try {
             emit(Resource.Loading())
             val item = databaseRepository.getItemById(id)

@@ -10,6 +10,6 @@ import com.denorapplications.mvvmtemplate.util.Constants
     version = Constants.DATABASE_VERSION,
     exportSchema = true
 )
-abstract class AppDatabase: RoomDatabase() {
-    abstract fun itemDao() : ItemDao
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun itemDao(): ItemDao
 }

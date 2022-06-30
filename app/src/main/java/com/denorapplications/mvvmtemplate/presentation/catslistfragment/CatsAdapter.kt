@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.denorapplications.mvvmtemplate.databinding.ItemCatBinding
 import com.denorapplications.mvvmtemplate.domain.models.Cat
 import com.denorapplications.mvvmtemplate.util.ImageLoader
-import javax.inject.Inject
 
 class CatsAdapter : ListAdapter<Cat, CatViewHolder>(DiffCallback) {
 
@@ -36,7 +35,6 @@ class CatsAdapter : ListAdapter<Cat, CatViewHolder>(DiffCallback) {
             override fun areContentsTheSame(oldItem: Cat, newItem: Cat): Boolean {
                 return oldItem.id == newItem.id
             }
-
         }
     }
 }

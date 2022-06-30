@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     }
     private val navController: NavController by lazy { navHostFragment.navController }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         appComponent.inject(this)
         super.onCreate(savedInstanceState)
@@ -27,11 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
         actionBar?.setDisplayHomeAsUpEnabled(true)
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
-
 }
