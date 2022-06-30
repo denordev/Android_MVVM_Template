@@ -1,6 +1,7 @@
 package com.denorapplications.mvvmtemplate.di
 
 import android.content.Context
+import com.denorapplications.mvvmtemplate.BuildConfig
 import com.denorapplications.mvvmtemplate.data.remote.CatsApi
 import com.denorapplications.mvvmtemplate.data.remote.repository.CatsRepositoryImpl
 import com.denorapplications.mvvmtemplate.domain.repositories.CatsRepository
@@ -22,7 +23,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
 
-    private const val BASE_URL = "https://api.thecatapi.com/v1/images/"
+    private const val BASE_URL = ""
 
     @Provides
     @Singleton
@@ -56,7 +57,7 @@ object RetrofitModule {
     fun provideRetrofit(moshi: Moshi, okHttpClient: OkHttpClient): Retrofit? {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .build()
     }
@@ -66,7 +67,7 @@ object RetrofitModule {
     fun provideCatsApi(moshi: Moshi, okHttpClient: OkHttpClient): CatsApi {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .build()
             .create(CatsApi::class.java)
