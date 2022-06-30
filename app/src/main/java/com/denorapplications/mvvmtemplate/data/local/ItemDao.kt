@@ -1,11 +1,6 @@
 package com.denorapplications.mvvmtemplate.data.local
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Delete
-import androidx.room.Update
+import androidx.room.* // ktlint-disable no-wildcard-imports
 import com.denorapplications.mvvmtemplate.domain.models.Item
 
 @Dao
@@ -28,5 +23,4 @@ interface ItemDao {
 
     @Query("DELETE FROM item")
     suspend fun deleteAllItems()
-
 }

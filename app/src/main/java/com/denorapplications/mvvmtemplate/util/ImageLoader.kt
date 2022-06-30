@@ -17,6 +17,6 @@ class ImageLoader @Inject constructor(
             .centerCrop()
             .placeholder(R.drawable.animation)
             .error(R.drawable.ic_baseline_error_outline_24)
-            .into(view);
+            .into(view)
     }
 }

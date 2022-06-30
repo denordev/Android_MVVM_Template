@@ -30,7 +30,8 @@ class CatsListFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCatsListBinding.inflate(
@@ -84,12 +85,11 @@ class CatsListFragment : Fragment() {
         _binding = null
     }
 
-    private fun showProgressBar(isVisible: Boolean) = with(binding.progressBar){
+    private fun showProgressBar(isVisible: Boolean) = with(binding.progressBar) {
         visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 
     private fun showConnectionErrorView(isVisible: Boolean) = with(binding.errorTextView) {
         visibility = if (isVisible) View.VISIBLE else View.GONE
     }
-
 }

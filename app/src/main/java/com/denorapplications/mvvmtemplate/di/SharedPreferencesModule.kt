@@ -12,5 +12,4 @@ object SharedPreferencesModule {
     @Singleton
     @Provides
     fun provideSharedPreferencesManager(context: Context) = SharedPreferencesManager(context)
-
 }

@@ -28,7 +28,7 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideItemDao(appDatabase: AppDatabase) : ItemDao {
+    fun provideItemDao(appDatabase: AppDatabase): ItemDao {
         return appDatabase.itemDao()
     }
 
@@ -37,5 +37,4 @@ object DatabaseModule {
     fun provideDatabaseRepository(itemDao: ItemDao): DatabaseRepository {
         return DatabaseRepositoryImpl(itemDao)
     }
-
 }

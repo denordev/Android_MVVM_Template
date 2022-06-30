@@ -6,16 +6,12 @@ import androidx.lifecycle.viewModelScope
 import com.denorapplications.mvvmtemplate.domain.models.ItemState
 import com.denorapplications.mvvmtemplate.domain.usecases.GetItemByIdUseCase
 import com.denorapplications.mvvmtemplate.util.Resource
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.* // ktlint-disable no-wildcard-imports
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
     private val getItemByIdUseCase: GetItemByIdUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val state = ItemState(isLoading = true, item = null, error = null)
     private val _item = MutableStateFlow<ItemState?>(state)
@@ -30,12 +26,12 @@ class MainViewModel @Inject constructor(
         val result = getItemByIdUseCase(id)
 
         result.map { result ->
-            when(result) {
+            when (result) {
                 is Resource.Error -> {
-                    _item.value = state.copy(isLoading = false, item = null ,error = result.message)
+                    _item.value = state.copy(isLoading = false, item = null, error = result.message)
                 }
                 is Resource.Loading -> {
-                    _item.value = state.copy(isLoading = true, item = null ,error = null)
+                    _item.value = state.copy(isLoading = true, item = null, error = null)
                 }
                 is Resource.Success -> {
                     _item.value = state.copy(isLoading = false, item = result.data, error = null)

@@ -19,7 +19,7 @@ class GetCatsListUseCase @Inject constructor(
             emit(Resource.Loading())
             val list = catsRepository.getCatsList(CATS_COUNT, PAGE_NUMBER)
             emit(Resource.Success(list))
-        }catch (e: HttpException) {
+        } catch (e: HttpException) {
             emit(Resource.Error(e.toString()))
         }
     }.flowOn(Dispatchers.IO)
